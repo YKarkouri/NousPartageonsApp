@@ -22,4 +22,6 @@
     <string name="change_status">Change Status</string>
     <string name="changer_la_photo">Changer la photo</string>
     <string name="chat_page">Chat Page</string>
+    <string name="update">UPDATE</string>
+    <string name="mon_status">Mon status</string>
 </resources>

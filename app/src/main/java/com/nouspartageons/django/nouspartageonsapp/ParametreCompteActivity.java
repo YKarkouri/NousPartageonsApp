@@ -1,5 +1,6 @@
 package com.nouspartageons.django.nouspartageonsapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class ParametreCompteActivity extends AppCompatActivity {
     private CircleImageView mImage;
     private TextView mStatus;
 
-    Button changeStatusBtn;
+    Button mChangestat;
 
 
     @Override
@@ -39,13 +40,18 @@ public class ParametreCompteActivity extends AppCompatActivity {
         mName = (TextView) findViewById(R.id.compte_name);
         mStatus = (TextView) findViewById(R.id.compte_status);
         mImage = (CircleImageView) findViewById(R.id.compte_image);
+        mChangestat = (Button) findViewById(R.id.change_status_btn);
 
-        changeStatusBtn = (Button) findViewById(R.id.change_status_btn);
-
-        changeStatusBtn.setOnClickListener(new View.OnClickListener() {
+        mChangestat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String status_value = mStatus.getText().toString();
+                Intent paramIntent = new Intent(ParametreCompteActivity.this, StatusActivity.class);
+
+                paramIntent.putExtra("status_value", status_value);
+                startActivity(paramIntent);
+                finish();
             }
         });
 

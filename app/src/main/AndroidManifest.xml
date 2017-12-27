@@ -23,7 +23,10 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />
-        <activity android:name=".ParametreCompteActivity"></activity>
+        <activity android:name=".ParametreCompteActivity" />
+        <activity
+            android:name=".StatusActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
