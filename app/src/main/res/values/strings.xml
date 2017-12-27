@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Nous Partageons App</string>
+
+    <string name="nom_complet">Nom complet</string>
+    <string name="email">Email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="valider">Valider</string>
+    <string name="log_out">Se déconnecter</string>
+    <string name="mot_de_passse">Mot de passe</string>
+    <string name="login">LOGIN</string>
+    <string name="this_is_the_main">This is the Main</string>
+    <string name="cr_er_un_nouveau_compte">Créer un Nouveau Compte !</string>
+
+
+    <string name="votre_email">Votre Email</string>
+    <string name="connectez_vous">Connectez-vous !</string>
+
+    <string name="avez_vous_un_compte">AVEZ VOUS UN COMPTE ?</string>
+    <string name="bienvenue_dans_nous_partageons_app">Bienvenue dans NousPartageons App</string>
+    <string name="creer_un_nouveau_compte">CREER UN NOUVEAU COMPTE !</string>
+    <string name="bonjour_j_utilise_nous_partageons_app">Bonjour j\'utilise Nous-Partageons App</string>
+    <string name="change_status">Change Status</string>
+    <string name="changer_la_photo">Changer la photo</string>
+    <string name="chat_page">Chat Page</string>
+</resources>

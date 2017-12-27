@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "945803881243",
+    "firebase_url": "https://nouspartageonsapp.firebaseio.com",
+    "project_id": "nouspartageonsapp",
+    "storage_bucket": "nouspartageonsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945803881243:android:4d50bbf18da12c8e",
+        "android_client_info": {
+          "package_name": "com.nouspartageons.django.nouspartageonsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945803881243-ieh22nm8q7063ej7vgee9ughfdp8eolc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nouspartageons.django.nouspartageonsapp",
+            "certificate_hash": "ae4e79aed78b5f4e7e16cfadae42d40d6687bed4"
+          }
+        },
+        {
+          "client_id": "945803881243-t74goeb3meidpf8ig44kms5f5b6rfqtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG2DkVOHJ8X9-rM5w9q3DtTDITfj4n2ns"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945803881243-t74goeb3meidpf8ig44kms5f5b6rfqtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
