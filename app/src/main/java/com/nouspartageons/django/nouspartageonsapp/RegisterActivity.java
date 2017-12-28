@@ -98,7 +98,6 @@ public class RegisterActivity extends AppCompatActivity {
                             utilisateurs.put("name", name);
                             utilisateurs.put("status", "Bonjour, J'utilise NousPartageons App");
                             utilisateurs.put("image", "default");
-                            utilisateurs.put("thumb_image", "default");
 
                             dbRef.setValue(utilisateurs).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

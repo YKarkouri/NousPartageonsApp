@@ -1,5 +1,6 @@
 package com.nouspartageons.django.nouspartageonsapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -22,9 +26,13 @@ public class UtilisateursActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
+    ProgressDialog mProgressDialog;
+
     private RecyclerView listUsers;
 
     private DatabaseReference dbRef;
+
+    private LinearLayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +44,25 @@ public class UtilisateursActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Liste des utilisateurs");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Utilisateurs");
+
+        //Progress Dialog
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setTitle("Chargement des utilisateurs");
+        mProgressDialog.setMessage("Veuillez patienter");
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.show();
+
         listUsers = (RecyclerView) findViewById(R.id.users_liste);
         listUsers.setHasFixedSize(true);
-        listUsers.setLayoutManager(new LinearLayoutManager(this));
+        mLayoutManager = new LinearLayoutManager(this);
+        listUsers.setLayoutManager(mLayoutManager);
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        dbRef = FirebaseDatabase.getInstance().getReference().child("Utilisateurs");
 
         FirebaseRecyclerAdapter<Utilisateur, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Utilisateur, UsersViewHolder>(
                 Utilisateur.class,
@@ -71,8 +88,15 @@ public class UtilisateursActivity extends AppCompatActivity {
                         startActivity(profileIntent);
 
                     }
-                });
-
+                }
+                );
+            }
+            @Override
+            public void onBindViewHolder(UsersViewHolder viewHolder, int position) {
+                Utilisateur users = getItem(position);
+                super.onBindViewHolder(viewHolder, position);
+                populateViewHolder(viewHolder, users, position);
+                mProgressDialog.dismiss();
             }
         };
 
@@ -98,9 +122,9 @@ public class UtilisateursActivity extends AppCompatActivity {
             userStatusView.setText(status);
         }
 
-        public void setUserImage(String thumb_image, Context ctx){
+        public void setUserImage(String image, Context ctx){
             CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.user_single_image);
-            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
+            Picasso.with(ctx).load(image).placeholder(R.drawable.user).into(userImageView);
         }
 
     }
