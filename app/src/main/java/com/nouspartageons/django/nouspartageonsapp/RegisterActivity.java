@@ -122,7 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
                         } else {
                             mProgress.hide();
                             // Si la connexion échoue, affichez un message à l'utilisateur.
-                            Toast.makeText(RegisterActivity.this, "Impossible de s'inscrire Veuillez vérifier le formulaire et réessayer.",
+                            Toast.makeText(RegisterActivity.this, "Impossible de s'inscrire Veuillez vérifier le formulaire ou la connexion Internet et réessayer.",
                                     Toast.LENGTH_SHORT).show();
                             Log.e("Task erreur", task.getException().toString());
                         }

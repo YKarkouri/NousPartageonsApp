@@ -6,6 +6,9 @@
         android:id="@+id/menu_parametres_btn"
         android:title="Paramètres " />
     <item
+        android:id="@+id/menu_users_btn"
+        android:title="Les Utilisateurs" />
+    <item
         android:id="@+id/main_logout_btn"
         android:title="@string/log_out" />
 </menu>

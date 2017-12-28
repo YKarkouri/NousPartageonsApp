@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             // Si la connexion échoue, affichez un message à l'utilisateur.
                             mLoginProgress.hide();
-                            Toast.makeText(LoginActivity.this, "Impossible de se connecter Veuillez vérifier Email ou le mot de passe et réessayer.",
+                            Toast.makeText(LoginActivity.this, "Impossible de se connecter Veuillez vérifier le formulaire ou la connexion Internet et réessayer.",
                                     Toast.LENGTH_SHORT).show();
 
                         }

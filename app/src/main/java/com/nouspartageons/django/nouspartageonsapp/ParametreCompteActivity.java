@@ -111,21 +111,14 @@ public class ParametreCompteActivity extends AppCompatActivity {
                 String name = dataSnapshot.child("name").getValue().toString();
                 String status = dataSnapshot.child("status").getValue().toString();
                 String image = dataSnapshot.child("image").getValue().toString();
-                String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
                 mName.setText(name);
                 mStatus.setText(status);
                 //mettre a jour image avec la biblio Picasso
-                if (image.equals("default")) {
-                    image = "https://firebasestorage.googleapis.com/v0/b/nouspartageonsapp.appspot.com/o/profile_images%2Fuser.png?alt=media&token=ed1328fa-315b-450c-b292-a4d4516e6102";
-                    Picasso.with(ParametreCompteActivity.this).load(image).into(mImage);
+                if (!image.equals("default")) {
+                    Picasso.with(ParametreCompteActivity.this).load(image).placeholder(R.drawable.user).into(mImage);
 
                 }
-                else {
-                    Picasso.with(ParametreCompteActivity.this).load(image).into(mImage);
-
-                }
-
             }
 
             @Override
